@@ -1,12 +1,19 @@
 export class Article {
     title: string;
     link: string;
+    role: string;       // Would like this to be an enum
     votes: number;
 
-    constructor(title: string, link: string, votes?: number) {
+    constructor(title: string, link: string,  role: string, votes?: number) {
         this.title = title;
         this.link = link;
         this.votes = votes || 0;
+        if (role != "administrator") {
+            this.role = "user";
+        }
+        else {
+            this.role = role;
+        }
     }
 
     voteUp(): void {
