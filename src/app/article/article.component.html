@@ -26,5 +26,7 @@
             </a>
         </li>
     </ul>
-    <button *ngIf="article.role == 'administrator'" class="negative ui right floated button">Flag Article</button>
+    <button *ngIf="article.role == 'administrator'" 
+            class="negative ui right floated button"
+            (click)="flagArticle(articles)">Flag Article</button>
 </div>
