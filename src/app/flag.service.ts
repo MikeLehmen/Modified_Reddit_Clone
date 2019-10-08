@@ -22,8 +22,14 @@ export class FlagService {
       if (articles[i].votes < minVotes) minVotes = articles[i].votes;
     }
 
-    while (flagged.votes >= minVotes) {
-      flagged.voteDown();
+    if (minVotes == 0)
+    {
+      flagged.votes = 0;
+    }
+    else {
+      while (flagged.votes >= minVotes) {
+        flagged.voteDown();
+      }
     }
   }
 
