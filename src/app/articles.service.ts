@@ -10,9 +10,9 @@ export class ArticlesService {
 
   constructor() { 
     this.poArticles = [
-      new Article('Angular', 'http://angular.io', "administrator", 3),
-      new Article('Fullstack', 'http://fullstack.io', "user", 2),
-      new Article('Angular Homepage', 'http://angular.io', "administrator", 1)
+      new Article('Angular', 'http://angular.io', "administrator", 5),
+      new Article('Fullstack', 'http://fullstack.io', "user", 4),
+      new Article('Angular Homepage', 'http://angular.io', "administrator", 3)
     ];
   }
 
