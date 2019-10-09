@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from './article/article.model';
+import { ArticlesService } from './articles.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,11 @@ import { Article } from './article/article.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // AppComponent just holds a handle to the array given to it by ArticlesService
   articles: Article[];
 
-  constructor() {
-    this.articles = [
-      new Article('Angular', 'http://angular.io', "administrator", 3),
-      new Article('Fullstack', 'http://fullstack.io', "user", 2),
-      new Article('Angular Homepage', 'http://angular.io', "administrator", 1)
-    ];
+  constructor(private articlesService : ArticlesService) {
+    this.articles = this.articlesService.getArticles();
   }
 
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {

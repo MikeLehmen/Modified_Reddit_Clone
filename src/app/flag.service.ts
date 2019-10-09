@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Article } from './article/article.model';
+import { ArticlesService } from './articles.service'
 
 @Injectable({
   providedIn: 'root'
 })
 export class FlagService {
 
-  constructor() { }
+  constructor(private articlesService : ArticlesService) { }
 
-  flagArticle(flagged: Article, articles: Article[]): void {
-    console.log("in FlagService flag article");
+  flagArticle(flagged: Article): void {
+    let articles = this.articlesService.getArticles();    
 
     let len = articles.length;
     let minVotes = 0;

@@ -3,12 +3,12 @@
 
   <div class="field">
     <label for="title">Title:</label>
-    <input name="title" id="title" #newtitle>   <!-- template variable -->
+    <input name="title" id="title" #newtitle>       <!-- template variable -->
   </div>
 
   <div class="field">
     <label for="link">Link:</label>
-    <input name="link" id="link" #newlink>               <!-- template variable -->
+    <input name="link" id="link" #newlink>          <!-- template variable -->
   </div>
 
   <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">
@@ -17,5 +17,5 @@
 </form>
 
 <div class="ui grid posts">
-  <app-article *ngFor="let article of sortedArticles()" [article]="article" [parentArticles]="articles"></app-article>
+  <app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>
 </div>

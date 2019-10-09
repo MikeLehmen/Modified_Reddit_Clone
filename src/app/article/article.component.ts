@@ -10,7 +10,7 @@ import { FlagService } from '../flag.service';
 export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
-  @Input() parentArticles: Article[];   // There has to be a better way of accessing this rather than passing a handle to every child
+  //@Input() parentArticles: Article[];   // There has to be a better way of accessing this rather than passing a handle to every child
 
   constructor(private FlagService : FlagService) {
 
@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
 
   flagArticle(articles: Article[]) {
     console.log("in article.component flagArticle");
-    this.FlagService.flagArticle(this.article, this.parentArticles);
+    this.FlagService.flagArticle(this.article);
   }
 
   ngOnInit() {
